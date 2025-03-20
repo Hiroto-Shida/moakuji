@@ -1,7 +1,7 @@
 {
   "name": "moakuji",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "wrangler dev --env local",
     "deploy": "wrangler deploy --minify"
   },
   "dependencies": {
