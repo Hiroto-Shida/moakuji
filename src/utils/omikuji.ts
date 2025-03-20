@@ -1,8 +1,8 @@
 import { OMIKUJI, OMIKUJI_LIST } from "../constants/omikuji";
 
 /**
- * おみくじを1回引く関数
- * @returns{{name: keyof typeof OMIKUJI, prob: number}} おみくじの結果
+ * モアくじを1回引く関数
+ * @returns{{name: keyof typeof OMIKUJI, prob: number}} モアくじの結果
  */
 export const drawOmikuji = (): { name: keyof typeof OMIKUJI; prob: number } => {
   const totalProbability = Object.values(OMIKUJI).reduce(
@@ -29,9 +29,9 @@ export const drawOmikuji = (): { name: keyof typeof OMIKUJI; prob: number } => {
 };
 
 /**
- * おみくじをn回引いて結果を返す関数
- * @param{number} n おみくじを引く回数
- * @returns{Array<{name: keyof typeof OMIKUJI, count: number, originProb: number}>} おみくじの結果
+ * モアくじをn回引いて結果を返す関数
+ * @param{number} n モアくじを引く回数
+ * @returns{Array<{name: keyof typeof OMIKUJI, count: number, originProb: number}>} モアくじの結果
  */
 export const drawMultipleOmikuji = (
   n: number
