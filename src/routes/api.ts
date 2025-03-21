@@ -14,8 +14,7 @@ api.openapi(sigleGetRoute, (c) => {
 });
 
 api.openapi(multipleGetRoute, (c) => {
-  const n = c.req.param("n");
-  const num = Number(n);
+  const num = Number(c.req.param("num"));
 
   const errorMessage = (() => {
     // nが数字でない場合はエラー
@@ -30,7 +29,7 @@ api.openapi(multipleGetRoute, (c) => {
 
     // nが1以上10000以下でない場合はエラー
     if (num < 1 || num > 10000) {
-      return "n should be between 1 and 1000";
+      return "n should be between 1 and 10000";
     }
     return null;
   })();

@@ -1,8 +1,3 @@
-```
-npm install
-npm run dev
-```
+モアイおみくじ \``モアくじ`\` の API
 
-```
-npm run deploy
-```
+https://moakuji.moai.workers.dev/
