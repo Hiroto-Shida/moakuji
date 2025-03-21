@@ -1,4 +1,4 @@
-import { css, keyframes, Style } from "hono/css";
+import { css, cx, keyframes, Style } from "hono/css";
 import type { FC } from "hono/jsx";
 import { urlJoin } from "../../utils/urls";
 
@@ -80,7 +80,12 @@ const linkContainerClass = css`
 const linkClass = css`
   padding: 0.5rem 1rem;
   color: #f8f8f2;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
+const normalFont = css`
+  font-weight: normal;
 `;
 
 const Body: FC<Props> = ({ baseUrl }) => {
@@ -107,6 +112,12 @@ const Body: FC<Props> = ({ baseUrl }) => {
         </a>
         <a href={urlJoin(baseUrl, "/doc/redoc")} className={linkClass}>
           Redoc
+        </a>
+        <a
+          href="https://github.com/Hiroto-Shida/moakuji"
+          className={cx(linkClass, normalFont)}
+        >
+          GitHub
         </a>
       </div>
     </body>
