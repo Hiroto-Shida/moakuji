@@ -2,14 +2,14 @@ import { createRoute, z } from "@hono/zod-openapi";
 import { OMIKUJI_ENUM } from "../constants/omikuji";
 
 const RequestSchema = z.object({
-  n: z.string().openapi({
+  num: z.string().max(10000).openapi({
     type: "integer",
     description: "モアくじを振る回数",
   }),
 });
 
 const ResponseSchema = z.object({
-  num: z.number().openapi({
+  num: z.number().max(10000).openapi({
     description: "モアくじを振った回数",
   }),
   result: z
@@ -46,8 +46,9 @@ const ErrorSchema = z.object({
 export const multipleGetRoute = createRoute({
   method: "get",
   // TODO: redoc上だと/apiが表示されない
-  path: "/multiple/{n}",
-  description: "運勢統計取得API",
+  path: "/multiple/{num}",
+  summary: "Moai Fortune Statistics API（運勢統計取得API）",
+  description: "モアくじをn回振って集計結果を取得するAPI",
   request: {
     params: RequestSchema,
   },
